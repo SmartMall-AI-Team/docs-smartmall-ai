@@ -2,7 +2,13 @@
 
 Contrato implementado pelo [backend no PR #3](https://github.com/SmartMall-AI/be-smartmall-ai/pull/3). O [frontend foi verificado tecnicamente contra a API](entrega-frontend.md) em desktop e celular, sem mudança neste contrato. O aceite funcional da equipe e a validação com usuários ainda precisam ser concluídos. O [OpenAPI exportado](https://github.com/SmartMall-AI/be-smartmall-ai/blob/main/openapi.json) contém os schemas completos gerados pelo FastAPI.
 
-Base `/api/v1`. JSON em `snake_case`, identificadores UUID em string e datas ISO 8601 em UTC. A interface traduz enums para português. Listas retornam arrays sem paginação no MVP. As rotas ainda não têm autenticação: usar apenas ambiente local e dados fictícios.
+Base `/api/v1`. JSON em `snake_case`, identificadores UUID em string e datas ISO 8601 em UTC. A interface traduz enums para português. Listas retornam arrays sem paginação no MVP. Use somente dados fictícios. Os papéis continuam sem autenticação individual; a demonstração pode exigir um código compartilhado validado no servidor.
+
+## Acesso à demonstração
+
+Quando `DEMO_ACCESS_TOKEN` está configurado, enviar `Authorization: Bearer <código>` em todas as rotas, inclusive Swagger/OpenAPI. Exceções públicas: `/health`, `/health/ready` e preflight CORS. Código ausente/inválido retorna 401 com `WWW-Authenticate: Bearer`. Respostas protegidas têm `Cache-Control: no-store`.
+
+`GET /api/v1/access` retorna `{"access_required":true}` após código válido, sem consultar o banco. Em desenvolvimento local sem código configurado, retorna `false`. Fora de `development`, o servidor exige código forte; `APP_ENV=demo` também exige simulação de IA. Essa barreira permite acesso completo ao ambiente fictício, sem permissões por perfil. Veja o [guia de deploy](deploy.md).
 
 ## Ocorrências
 
