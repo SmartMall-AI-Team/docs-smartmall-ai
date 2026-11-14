@@ -2,7 +2,9 @@
 
 ## Estado verificável
 
-Demonstração publicada em 14/11/2026: [frontend Vercel](https://smartmall-ai-demo.vercel.app) e [API Render](https://smartmall-ai-demo-api-8mez.onrender.com/health/ready), com PostgreSQL Supabase, código privado compartilhado e IA explicitamente simulada. Foram aprovados 54 testes do backend e 12 cenários de navegador locais; os checks do GitHub repetem essas verificações.
+Demonstração publicada em 14/11/2026: [frontend Vercel](https://smartmall-ai-demo.vercel.app) e [API Render](https://smartmall-ai-demo-api-8mez.onrender.com/health/ready), com PostgreSQL Supabase e IA explicitamente simulada. Por solicitação posterior da liderança, o código de acesso foi dispensado; o login dos perfis fictícios permanece. As evidências iniciais abaixo foram obtidas antes dessa alteração.
+
+A remoção foi integrada no [backend #8](https://github.com/SmartMall-AI/be-smartmall-ai/pull/8), com 55 testes aprovados e check obrigatório aprovado. O deploy Render `dep-dbs7dlbbc2fs73apjom0` ficou `live` no commit `50aa769d5f3382c05d490506119a8e3a6e47a737`; o rebuild Vercel `dpl_37WSXub1dr8xfFpTv59uh2vtvvAj` ficou `READY` com `VITE_DEMO_ACCESS_REQUIRED=false`. A verificação publicada aprovou ausência do campo, login e recarga em desktop e celular, além de consulta operacional sem Authorization retornando 200 com `Cache-Control: no-store` e `/api/v1/access` indicando `false`.
 
 Backend e frontend foram integrados nos PRs [backend #5](https://github.com/SmartMall-AI/be-smartmall-ai/pull/5) e [frontend #4](https://github.com/SmartMall-AI/fe-smartmall-ai/pull/4), com checks aprovados. O [Actions do frontend](https://github.com/SmartMall-AI/fe-smartmall-ai/actions/runs/43603088430) repete os 12 cenários com o comando real de início do deploy.
 
@@ -22,7 +24,7 @@ Os 12 cenários Playwright também passaram contra os endereços publicados, em 
 
 ## Arquitetura
 
-Frontend Vercel → API FastAPI no Render → PostgreSQL Supabase. Somente o backend conhece `DATABASE_URL`. O código privado do ambiente fica no Render e é digitado pelos participantes na interface, nunca incorporado ao JavaScript publicado.
+Frontend Vercel → API FastAPI no Render → PostgreSQL Supabase. Somente o backend conhece `DATABASE_URL`. A demonstração dispensa código de acesso.
 
 ## Banco Supabase
 
@@ -46,7 +48,7 @@ Usar o `render.yaml` de `SmartMall-AI/be-smartmall-ai`, branch `main`, com plano
 | APP_ENV | `demo` |
 | AI_SIMULATION | `true` |
 | DEMO_SEED | `true` |
-| DEMO_ACCESS_TOKEN | Gerado no Render; ao menos 32 caracteres ASCII sem espaços |
+| DEMO_ACCESS_TOKEN | Vazio; demonstração sem código de acesso |
 | DATABASE_URL | URI privada do banco exclusivo, com TLS |
 | CORS_ORIGINS | Origem HTTPS exata do frontend, sem caminho |
 
@@ -66,22 +68,22 @@ Conectar somente `SmartMall-AI/fe-smartmall-ai`, usando a raiz desse repositóri
 | Build | `npm run build` |
 | Saída | `dist` |
 | VITE_API_BASE_URL | `https://<endereço-real-da-api>/api/v1` |
-| VITE_DEMO_ACCESS_REQUIRED | `true` |
+| VITE_DEMO_ACCESS_REQUIRED | `false` |
 
 Essas duas variáveis são públicas. Não criar `VITE_DEMO_ACCESS_TOKEN`, `VITE_DATABASE_URL` nem `VITE_OPENAI_API_KEY`. Alterar uma variável Vite exige novo build. Adicionar no CORS do backend somente as origens de produção/preview realmente usadas; não usar wildcard para todos os previews da Vercel.
 
 ## Acesso e limites
 
-Em `APP_ENV=demo`, faltar código forte ou desabilitar a simulação impede a API de iniciar. Todas as rotas, inclusive Swagger e OpenAPI, exigem `Authorization: Bearer <código>`, exceto `/health`, `/health/ready` e preflights CORS. `GET /api/v1/access` permite validar o código sem consultar o banco. Código ausente/inválido retorna 401, com `WWW-Authenticate: Bearer`.
+Em `APP_ENV=demo`, a simulação de IA continua obrigatória, mas `DEMO_ACCESS_TOKEN` pode ficar vazio. Nesse caso, as rotas dispensam código e `GET /api/v1/access` retorna `{"access_required":false}`. As respostas da demonstração mantêm `Cache-Control: no-store`.
 
-A interface valida o código antes de entrar, guarda-o somente na sessão da aba e o remove ao sair. A barreira é compartilhada e permite acesso completo aos registros fictícios; não implementa identidade individual, papéis autorizados, auditoria por pessoa nem isolamento entre lojistas. Use HTTPS e distribua o código somente aos participantes. Para revogar acessos, trocar o valor no Render e reiniciar o serviço.
+Com `VITE_DEMO_ACCESS_REQUIRED=false`, a interface mostra somente o login dos perfis fictícios, sem campo de código. Não há identidade individual, papéis autorizados, auditoria por pessoa nem isolamento entre lojistas. Se o código opcional for reativado, configurar também o frontend e publicar novamente.
 
-O assessor de segurança do Supabase retornou somente cinco avisos informativos de RLS sem políticas. Isso é intencional: o acesso aos dados passa pela API privada, e os papéis públicos não devem obter políticas de leitura/escrita.
+O assessor de segurança do Supabase retornou somente cinco avisos informativos de RLS sem políticas. Isso é intencional: o acesso ao banco passa pela conexão privada da API, e os papéis públicos não devem obter políticas de leitura/escrita.
 
 ## Verificação após publicar
 
-1. Conferir health e prontidão; consulta sem código deve retornar 401, sem conteúdo operacional.
-2. Entrar com o código privado e um perfil fictício. Conferir erro com código inválido e remoção ao sair.
+1. Conferir health e prontidão; consulta operacional sem código deve retornar 200 e `/api/v1/access` deve indicar `false`.
+2. Conferir ausência do campo de código e entrar com um perfil fictício.
 3. Criar uma ocorrência e encontrá-la após recarregar; solicitar análise e manter a indicação de simulação visível.
 4. Revisar, criar tarefa com responsável/prazo, iniciar/concluir e resolver explicitamente. Conferir histórico e dashboard.
 5. Repetir em celular e após um novo deploy, verificando que o banco preservou os registros.

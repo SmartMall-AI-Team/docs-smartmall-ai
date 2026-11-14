@@ -8,7 +8,7 @@ Base `/api/v1`. JSON em `snake_case`, identificadores UUID em string e datas ISO
 
 Quando `DEMO_ACCESS_TOKEN` está configurado, enviar `Authorization: Bearer <código>` em todas as rotas, inclusive Swagger/OpenAPI. Exceções públicas: `/health`, `/health/ready` e preflight CORS. Código ausente/inválido retorna 401 com `WWW-Authenticate: Bearer`. Respostas protegidas têm `Cache-Control: no-store`.
 
-`GET /api/v1/access` retorna `{"access_required":true}` após código válido, sem consultar o banco. Em desenvolvimento local sem código configurado, retorna `false`. Fora de `development`, o servidor exige código forte; `APP_ENV=demo` também exige simulação de IA. Essa barreira permite acesso completo ao ambiente fictício, sem permissões por perfil. Veja o [guia de deploy](deploy.md).
+`GET /api/v1/access` retorna `{"access_required":true}` após código válido, sem consultar o banco. Em `development` ou `demo` sem código configurado, retorna `false` e as rotas dispensam esse cabeçalho. A demonstração publicada usa essa configuração, por decisão da liderança, mantendo o login dos perfis fictícios. Fora desses dois ambientes, o servidor exige código forte; `APP_ENV=demo` continua exigindo simulação de IA. Não há permissões por perfil. Veja o [guia de deploy](deploy.md).
 
 ## Ocorrências
 
