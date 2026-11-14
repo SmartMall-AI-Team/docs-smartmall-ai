@@ -28,11 +28,11 @@ Outros perfis disponíveis na tela: `operacao` / `operacao123`, `joao` / `joao12
 
 | Frente | Entrega verificável | Onde conferir |
 | --- | --- | --- |
-| Backend | Ocorrências, tarefas, responsáveis, equipamentos, filtros, histórico e dashboard | [Código](https://github.com/SmartMall-AI/be-smartmall-ai) · [Contrato](contrato-api.md) |
-| Frontend | Formulários, triagem manual e assistida, tarefas, equipamentos e indicadores | [Código](https://github.com/SmartMall-AI/fe-smartmall-ai) · [Revisão técnica](entrega-frontend.md) |
-| Testes | 55 testes backend; 12 cenários desktop/celular na entrega protegida; login e recarga sem código verificados depois nos dois formatos | [Evidências datadas](deploy.md) · [Actions backend](https://github.com/SmartMall-AI/be-smartmall-ai/actions) · [Actions frontend](https://github.com/SmartMall-AI/fe-smartmall-ai/actions) |
+| Backend | Ocorrências, tarefas, responsáveis, equipamentos, filtros, histórico e dashboard | [Código](https://github.com/SmartMall-AI-Team/be-smartmall-ai) · [Contrato](contrato-api.md) |
+| Frontend | Formulários, triagem manual e assistida, tarefas, equipamentos e indicadores | [Código](https://github.com/SmartMall-AI-Team/fe-smartmall-ai) · [Revisão técnica](entrega-frontend.md) |
+| Testes | 55 testes backend; 12 cenários desktop/celular na entrega protegida; login e recarga sem código verificados depois nos dois formatos | [Evidências datadas](deploy.md) · [Actions backend](https://github.com/SmartMall-AI-Team/be-smartmall-ai/actions) · [Actions frontend](https://github.com/SmartMall-AI-Team/fe-smartmall-ai/actions) |
 | Hospedagem | Vercel → API Render → PostgreSQL Supabase | [Arquitetura](arquitetura.md) · [Prontidão da API/banco](https://smartmall-ai-demo-api-8mez.onrender.com/health/ready) |
-| Evolução | Alterações integradas por PR, com autoria e checks preservados | [PRs backend](https://github.com/SmartMall-AI/be-smartmall-ai/pulls?q=is%3Apr+is%3Amerged) · [PRs frontend](https://github.com/SmartMall-AI/fe-smartmall-ai/pulls?q=is%3Apr+is%3Amerged) |
+| Evolução | Alterações integradas por PR, com autoria e checks preservados | [PRs backend](https://github.com/SmartMall-AI-Team/be-smartmall-ai/pulls?q=is%3Apr+is%3Amerged) · [PRs frontend](https://github.com/SmartMall-AI-Team/fe-smartmall-ai/pulls?q=is%3Apr+is%3Amerged) |
 
 Os testes usam PostgreSQL real e falhas de IA/rede controladas. Não representam sessões com usuários. O [PR backend #8](https://github.com/SmartMall-AI/be-smartmall-ai/pull/8) registra a remoção do código compartilhado e o teste de acesso sem código.
 
@@ -47,6 +47,6 @@ Consulte [escopo](escopo.md), [backlog](backlog.md) e [plano de validação](val
 
 ## 5. Equipe e organização
 
-[João Geraldo — @geraldojoao](https://github.com/geraldojoao) lidera o projeto e responde pelo backend. [Equipe e frentes](equipe.md) · [Governança](governanca.md) · [Contribuição](CONTRIBUTING.md).
+[João Geraldo — @Setezin7](https://github.com/Setezin7) lidera o projeto e responde pelo backend. [Equipe e frentes](equipe.md) · [Governança](governanca.md) · [Contribuição](CONTRIBUTING.md).
 
 O [Trello](https://trello.com/b/TMJ0EfTl) é privado; o acesso não é necessário para consultar a demonstração e as evidências públicas deste guia.

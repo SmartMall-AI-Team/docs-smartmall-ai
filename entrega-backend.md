@@ -6,8 +6,8 @@ Responsável: [João Geraldo — @geraldojoao](https://github.com/geraldojoao). 
 
 ## Evidências
 
-- [Commit do backend](https://github.com/SmartMall-AI/be-smartmall-ai/commit/f1500db).
-- [Checks aprovados do PR](https://github.com/SmartMall-AI/be-smartmall-ai/actions/runs/43542502531) e [merge na main](https://github.com/SmartMall-AI/be-smartmall-ai/commit/a335e02a63a201c5381417c9a83d2d1de89d6f55). As proteções foram mantidas; integração pela exceção nominal do líder, sem revisão independente de outro integrante.
+- [Commit do backend](https://github.com/SmartMall-AI-Team/be-smartmall-ai/commit/f1500db).
+- [Checks aprovados do PR](https://github.com/SmartMall-AI/be-smartmall-ai/actions/runs/43542502531) e [merge na main](https://github.com/SmartMall-AI-Team/be-smartmall-ai/commit/a335e02a63a201c5381417c9a83d2d1de89d6f55). As proteções foram mantidas; integração pela exceção nominal do líder, sem revisão independente de outro integrante.
 - 46 testes passaram localmente com PostgreSQL 18.7 real, além de lint, formatação e Alembic sem divergências. Os testes criam um banco descartável; não apagam o banco de desenvolvimento.
 - Casos de IA exercitam o SDK com transporte HTTP controlado: saída estruturada, timeout, limite de uso, recusa, resposta inválida, preservação da análise anterior e alteração concorrente.
 - Chamada real com relato fictício retornou HTTP 429 / `credit_balance_exhausted`; o backend retornou 503 e preservou a ocorrência. Não há resultado real de IA aprovado nesta entrega.
@@ -16,7 +16,7 @@ Responsável: [João Geraldo — @geraldojoao](https://github.com/geraldojoao). 
 
 ## Primeira integração — roteiro inicial
 
-O backend [README](https://github.com/SmartMall-AI/be-smartmall-ai/blob/main/README.md) traz a execução local. O contrato está em [contrato-api.md](contrato-api.md).
+O backend [README](https://github.com/SmartMall-AI-Team/be-smartmall-ai/blob/main/README.md) traz a execução local. O contrato está em [contrato-api.md](contrato-api.md).
 
 1. João inicia PostgreSQL, aplica `uv run alembic upgrade head`, executa o seed opcional e inicia Uvicorn em `127.0.0.1:8000`.
 2. Frontend A implementa formulário/lista/detalhe usando ocorrências; configura a URL local da API. Validar persistência recarregando a página.

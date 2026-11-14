@@ -2,7 +2,7 @@
 
 ## Liderança e responsabilidades
 
-[@geraldojoao](https://github.com/geraldojoao) lidera o projeto, revisa as alterações e coordena a integração à `main`. Backend fica em `be-smartmall-ai`, frontend em `fe-smartmall-ai` e documentação compartilhada neste repositório.
+[@Setezin7](https://github.com/Setezin7) lidera o projeto, revisa as alterações e coordena a integração à `main`. Backend fica em `be-smartmall-ai`, frontend em `fe-smartmall-ai` e documentação compartilhada neste repositório.
 
 Os integrantes autorizados têm escrita para trabalhar em branches. A `main` é protegida e a integração é reservada à liderança. Quem ainda não tem acesso de escrita pode contribuir por um fork e enviar um pull request.
 
@@ -12,7 +12,7 @@ Os integrantes autorizados têm escrita para trabalhar em branches. A `main` é 
 2. Atualize a `main` local e crie uma branch por tarefa.
 3. Implemente, verifique e faça commits com sua própria identidade Git.
 4. Envie a branch e abra um pull request para `main`.
-5. Preencha o modelo, vincule o cartão e as evidências e aguarde a revisão de @geraldojoao.
+5. Preencha o modelo, vincule o cartão e as evidências e aguarde a revisão de @Setezin7.
 6. Corrija o que for solicitado e aguarde nova revisão quando houver novos commits.
 7. A liderança integra o PR após aprová-lo e conferir os checks exigidos.
 
@@ -34,7 +34,7 @@ Abra o pull request na página do repositório. Preserve nos commits o nome e o 
 
 - Uma aprovação é exigida e a revisão do responsável definido em `.github/CODEOWNERS` é obrigatória para os integrantes.
 - Novos commits invalidam aprovações anteriores; conversas de revisão precisam ser resolvidas.
-- Apenas @geraldojoao pode integrar alterações na `main`.
+- Apenas @Setezin7 pode integrar alterações na `main`.
 - Force push e exclusão da `main` são bloqueados.
 - No backend, o check `check` do GitHub Actions precisa passar e a branch deve estar atualizada com a `main`.
 - Alterações são integradas com merge commit, preservando os commits e sua autoria.

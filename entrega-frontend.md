@@ -2,9 +2,9 @@
 
 **Estado atual:** [demonstração publicada](https://smartmall-ai-demo.vercel.app), sem código de acesso adicional, com IA simulada. Entre com `marina` / `marina123`. O [guia de deploy](deploy.md) registra as verificações posteriores; o relato abaixo preserva as evidências da revisão inicial.
 
-Revisão técnica de 14/11/2026, conduzida por João Geraldo (`geraldojoao`). Foram consultados os PRs abertos dos três repositórios: somente o [frontend #3](https://github.com/SmartMall-AI/fe-smartmall-ai/pull/3) estava aberto. Backend e documentação não tinham PRs pendentes. O trabalho original de Felipe (`FelipeAaugusto`) foi preservado; as correções foram acrescentadas em [df9095b](https://github.com/SmartMall-AI/fe-smartmall-ai/commit/df9095bc5ebbff84834fbe8d28e6909957380516), sem force push.
+Revisão técnica de 14/11/2026, conduzida por João Geraldo (`geraldojoao`). Foram consultados os PRs abertos dos três repositórios: somente o [frontend #3](https://github.com/SmartMall-AI/fe-smartmall-ai/pull/3) estava aberto. Backend e documentação não tinham PRs pendentes. O trabalho original de Felipe (`FelipeAaugusto`) foi preservado; as correções foram acrescentadas em [df9095b](https://github.com/SmartMall-AI-Team/fe-smartmall-ai/commit/df9095bc5ebbff84834fbe8d28e6909957380516), sem force push.
 
-O PR foi [aprovado pela liderança](https://github.com/SmartMall-AI/fe-smartmall-ai/pull/3#pullrequestreview-5904558614) após as correções e os checks aprovados, e [integrado à main por merge commit](https://github.com/SmartMall-AI/fe-smartmall-ai/commit/40816bd2e83b7a25f1456649c5d26b86907cc07c), mantendo a proteção e a autoria dos commits.
+O PR foi [aprovado pela liderança](https://github.com/SmartMall-AI/fe-smartmall-ai/pull/3#pullrequestreview-5904558614) após as correções e os checks aprovados, e [integrado à main por merge commit](https://github.com/SmartMall-AI-Team/fe-smartmall-ai/commit/40816bd2e83b7a25f1456649c5d26b86907cc07c), mantendo a proteção e a autoria dos commits.
 
 ## Problemas encontrados e corrigidos
 
@@ -36,4 +36,4 @@ Responsável e prazo são definidos ao criar a tarefa; a interface atual atualiz
 
 Na revisão inicial, VAL-01, DEMO-01, hospedagem pública, autenticação real e chamada real à IA estavam pendentes. A hospedagem foi concluída depois, conforme o [guia de deploy](deploy.md); as sessões com usuários, o ensaio final, a autenticação real e a validação da chamada real à IA continuam pendentes. Não há comprovação de redução do tempo de atendimento.
 
-Veja o [README do frontend](https://github.com/SmartMall-AI/fe-smartmall-ai/blob/main/README.md) para reproduzir os testes. Use somente dados fictícios e banco de testes exclusivo: os cenários criam registros e não os removem.
+Veja o [README do frontend](https://github.com/SmartMall-AI-Team/fe-smartmall-ai/blob/main/README.md) para reproduzir os testes. Use somente dados fictícios e banco de testes exclusivo: os cenários criam registros e não os removem.

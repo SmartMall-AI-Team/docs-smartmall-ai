@@ -1,5 +1,7 @@
 # SmartMall AI
 
+> **Cópia independente — SmartMall-AI-Team.** Administração: [@Setezin7](https://github.com/Setezin7). Código e histórico preservados da organização anterior. Links de PRs, execuções antigas e serviços publicados registram evidências da origem; esses recursos não foram migrados nem recriados por esta cópia. Consulte o [registro da cópia](https://github.com/SmartMall-AI-Team/docs-smartmall-ai/blob/main/copia-team.md).
+
 Gestão de ocorrências operacionais de shopping: do relato ao atendimento, com triagem assistida e revisão humana.
 
 **[Abrir demonstração](https://smartmall-ai-demo.vercel.app)** · **[Guia para a banca](avaliacao.md)** · **[API interativa](https://smartmall-ai-demo-api-8mez.onrender.com/docs)**
@@ -42,16 +44,16 @@ Captura do ambiente publicado em 14/11/2026; os indicadores mudam conforme os re
 
 | Repositório público | Conteúdo | Ambiente |
 | --- | --- | --- |
-| [fe-smartmall-ai](https://github.com/SmartMall-AI/fe-smartmall-ai) | React, TypeScript e interface | [Site na Vercel](https://smartmall-ai-demo.vercel.app) |
-| [be-smartmall-ai](https://github.com/SmartMall-AI/be-smartmall-ai) | FastAPI, SQLAlchemy e migrações | [Swagger no Render](https://smartmall-ai-demo-api-8mez.onrender.com/docs) |
-| [docs-smartmall-ai](https://github.com/SmartMall-AI/docs-smartmall-ai) | Requisitos, documentação e evidências | Você está aqui |
+| [fe-smartmall-ai](https://github.com/SmartMall-AI-Team/fe-smartmall-ai) | React, TypeScript e interface | [Site na Vercel](https://smartmall-ai-demo.vercel.app) |
+| [be-smartmall-ai](https://github.com/SmartMall-AI-Team/be-smartmall-ai) | FastAPI, SQLAlchemy e migrações | [Swagger no Render](https://smartmall-ai-demo-api-8mez.onrender.com/docs) |
+| [docs-smartmall-ai](https://github.com/SmartMall-AI-Team/docs-smartmall-ai) | Requisitos, documentação e evidências | Você está aqui |
 
-Verificação funcional de **14/11/2026**: 55 testes backend aprovados; 12 cenários de navegador aprovados na entrega do ambiente protegido; após retirar o código de acesso, login e recarga novamente aprovados em desktop e celular, com consultas públicas à API. O [guia de deploy](deploy.md) distingue cada verificação. [Actions backend](https://github.com/SmartMall-AI/be-smartmall-ai/actions) · [Actions frontend](https://github.com/SmartMall-AI/fe-smartmall-ai/actions).
+Verificação funcional de **14/11/2026**: 55 testes backend aprovados; 12 cenários de navegador aprovados na entrega do ambiente protegido; após retirar o código de acesso, login e recarga novamente aprovados em desktop e celular, com consultas públicas à API. O [guia de deploy](deploy.md) distingue cada verificação. [Actions backend](https://github.com/SmartMall-AI-Team/be-smartmall-ai/actions) · [Actions frontend](https://github.com/SmartMall-AI-Team/fe-smartmall-ai/actions).
 
 ## Limites e organização
 
 A integração OpenAI está implementada e testada com respostas controladas; a chamada real depende de saldo e validação. Autenticação individual, autorização por perfil, filtros adicionais, edição de responsável/prazo e sessões com usuários continuam pendentes. O rádio aceita anotações digitadas, sem captura de áudio ou transcrição. Redução de tempo de atendimento é uma hipótese ainda sem medição.
 
-**Liderança e backend:** [João Geraldo — @geraldojoao](https://github.com/geraldojoao). A [equipe](equipe.md) tem quatro integrantes; as demais frentes ainda estão em definição.
+**Liderança e backend:** [João Geraldo — @Setezin7](https://github.com/Setezin7). A [equipe](equipe.md) tem quatro integrantes; as demais frentes ainda estão em definição.
 
-O [Trello](https://trello.com/b/TMJ0EfTl) é privado e complementar: os materiais públicos acima permitem consultar a entrega. O [Miro](https://miro.com/app/board/uXjVEOPHRG4=/?share_link_id=465697087214) registra o planejamento inicial. A [organização SmartMall-AI](https://github.com/SmartMall-AI) reúne os links principais.
+O [Trello](https://trello.com/b/TMJ0EfTl) é privado e complementar: os materiais públicos acima permitem consultar a entrega. O [Miro](https://miro.com/app/board/uXjVEOPHRG4=/?share_link_id=465697087214) registra o planejamento inicial. A [organização SmartMall-AI-Team](https://github.com/SmartMall-AI-Team) reúne os links principais.
