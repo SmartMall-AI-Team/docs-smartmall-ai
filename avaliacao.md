@@ -20,7 +20,7 @@ O SmartMall AI busca centralizar ocorrências operacionais de um shopping. A IA 
 | Frontend | Interface executável, build e 12 cenários integrados de navegador aprovados em desktop e celular, incluindo código privado validado no servidor |
 | IA | Integração e testes controlados implementados; chamada real recusada por saldo esgotado (`credit_balance_exhausted`); simulação explícita disponível |
 | Validação com usuários | Roteiro preparado; sessões e resultados ainda não coletados |
-| Hospedagem | Banco Supabase exclusivo criado, migrado e com seed fictício; API Render e frontend Vercel ainda em configuração. [Estado do deploy](deploy.md) |
+| Hospedagem | [Demonstração Vercel publicada](https://smartmall-ai-demo.vercel.app), API Render e banco Supabase; 12 testes de navegador também aprovados contra a nuvem. Código privado compartilhado e IA simulada. [Evidências](deploy.md) |
 
 ## 3. Evidências técnicas
 
