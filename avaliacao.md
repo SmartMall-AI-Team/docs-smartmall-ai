@@ -16,11 +16,11 @@ O SmartMall AI busca centralizar ocorrências operacionais de um shopping. A IA 
 | --- | --- |
 | Estrutura dos repositórios | Três repositórios separados e públicos |
 | Backend do MVP | Ocorrências, tarefas, equipamentos, filtros, histórico e dashboard integrados à main no [PR #3](https://github.com/SmartMall-AI/be-smartmall-ai/pull/3) |
-| Verificação do backend | 46 testes passaram com PostgreSQL real, além de lint, formatação e verificação da migração |
-| Frontend | Interface executável no [PR #3](https://github.com/SmartMall-AI/fe-smartmall-ai/pull/3); build e 10 cenários integrados de navegador aprovados em desktop e celular |
+| Verificação do backend | 54 testes passaram com PostgreSQL real, incluindo controle de acesso, RLS e inicialização do deploy; lint, formatação e migrações verificados |
+| Frontend | Interface executável, build e 12 cenários integrados de navegador aprovados em desktop e celular, incluindo código privado validado no servidor |
 | IA | Integração e testes controlados implementados; chamada real recusada por saldo esgotado (`credit_balance_exhausted`); simulação explícita disponível |
 | Validação com usuários | Roteiro preparado; sessões e resultados ainda não coletados |
-| Hospedagem pública | Ambientes ainda não provisionados |
+| Hospedagem | Banco Supabase exclusivo criado, migrado e com seed fictício; API Render e frontend Vercel ainda em configuração. [Estado do deploy](deploy.md) |
 
 ## 3. Evidências técnicas
 

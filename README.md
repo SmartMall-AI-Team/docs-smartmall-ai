@@ -15,6 +15,7 @@ Este repositório é o ponto de entrada para conhecer a proposta, acompanhar o d
 - [Contrato implementado da API](contrato-api.md)
 - [Entrega do backend e guia de integração](entrega-backend.md)
 - [Revisão do frontend e evidências de integração](entrega-frontend.md)
+- [Deploy de demonstração e controle de acesso](deploy.md)
 - [Backlog por frente](backlog.md)
 - [Validação com usuários](validacao-usuarios.md)
 - [Roteiro de demonstração](demonstracao.md)
