@@ -2,6 +2,8 @@
 
 Este guia facilita a avaliação da entrega; não representa critérios oficiais do evento.
 
+Consulte a [central de links para avaliação](links-avaliacao.md) para Vercel, API, Trello, Miro, repositórios e evidências.
+
 **[Abrir demonstração](https://smartmall-ai-demo.vercel.app)** · **[Documentação](README.md)** · **[Swagger público](https://smartmall-ai-demo-api-8mez.onrender.com/docs)**
 
 ## 1. Entrar e conhecer a proposta
