@@ -32,10 +32,10 @@ O Trello mantém listas por etapa e uma única cor de andamento por cartão. A l
 | FE-01 a FE-05 | Aplicação executável; fluxo de cadastro, triagem, tarefa e dashboard verificado em desktop e celular |
 | FE-06 | Parcial: busca/filtros rápidos e equipamentos; faltam filtros completos de categoria, equipamento e local |
 | HIST-01 | Eventos persistidos exibidos no detalhe; sem autoria autenticada |
-| INT-01 | 10 testes técnicos aprovados, incluindo IA simulada e falha controlada; aceite final da equipe pendente |
+| INT-01 | Fluxos integrados verificados em desktop/celular, incluindo IA simulada e falha controlada; [evidências atuais](deploy.md); aceite final da equipe pendente |
 | VAL-01 e DEMO-01 | Sessões com usuários e ensaio ainda pendentes; testes automatizados não os substituem |
 
-A edição de responsável/prazo de tarefa existente permanece futura; hoje esses campos são definidos na criação e a interface permite atualizar o status. Autenticação e hospedagem não foram entregues.
+A edição de responsável/prazo de tarefa existente permanece futura; hoje esses campos são definidos na criação e a interface permite atualizar o status. A autenticação real continua pendente. A [hospedagem pública](deploy.md) foi entregue na Vercel, Render e Supabase.
 
 ## Ordem de integração
 
