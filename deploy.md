@@ -2,15 +2,21 @@
 
 ## Estado verificável
 
-Preparação implementada em 14/11/2026: backend com barreira de acesso, RLS, inicialização com migrações/seed e Blueprint do Render; frontend com configuração Vercel e entrada do código privado. Foram aprovados 54 testes do backend e 12 cenários de navegador com FastAPI/PostgreSQL reais em banco descartável, desktop e celular. Esses resultados são locais; não representam um ambiente público já publicado.
+Demonstração publicada em 14/11/2026: [frontend Vercel](https://smartmall-ai-demo.vercel.app) e [API Render](https://smartmall-ai-demo-api-8mez.onrender.com/health/ready), com PostgreSQL Supabase, código privado compartilhado e IA explicitamente simulada. Foram aprovados 54 testes do backend e 12 cenários de navegador locais; os checks do GitHub repetem essas verificações.
 
 Backend e frontend foram integrados nos PRs [backend #5](https://github.com/SmartMall-AI/be-smartmall-ai/pull/5) e [frontend #4](https://github.com/SmartMall-AI/fe-smartmall-ai/pull/4), com checks aprovados. O [Actions do frontend](https://github.com/SmartMall-AI/fe-smartmall-ai/actions/runs/43603088430) repete os 12 cenários com o comando real de início do deploy.
 
-O projeto exclusivo [smartmall-ai-demo no Supabase](https://supabase.com/dashboard/project/umvvwwbhoqkfhviwtqel) foi criado e está saudável, em `us-west-1`, PostgreSQL 17.11. Uma conexão privada com papel exclusivo `smartmall_demo_api` aplicou as migrações até `3c4e52d8a901` e o seed fictício. As cinco tabelas operacionais têm RLS habilitada e o seed contém uma ocorrência fictícia. O endereço do Session pooler foi conferido no painel: `aws-1-us-west-1.pooler.supabase.com:5432`. O projeto UniVerso existente foi preservado.
+O projeto exclusivo [smartmall-ai-demo no Supabase](https://supabase.com/dashboard/project/umvvwwbhoqkfhviwtqel) está saudável, em `us-west-1`, PostgreSQL 17.11. Uma conexão privada com papel exclusivo `smartmall_demo_api` aplicou as migrações até `3c4e52d8a901` e o seed fictício inicial, com uma ocorrência. As cinco tabelas operacionais têm RLS habilitada. Os testes posteriores criam registros fictícios adicionais. O endereço do Session pooler foi conferido no painel: `aws-1-us-west-1.pooler.supabase.com:5432`. O projeto UniVerso existente foi preservado.
 
 O papel da API não é superuser, não cria bancos/roles e recebeu somente uso/criação no schema público para possuir as tabelas da aplicação. A senha foi gerada no banco, transferida de forma privada para a sessão de preparação e o armazenamento temporário foi removido; não foi inserida em Git ou no texto das migrações.
 
-O [plano Render](https://dashboard.render.com/blueprint/exs-dbs6n0u1egvs73d0448g/sync/exe-dbs6n361egvs73d04ap0) está preparado e ainda não foi aplicado: cria somente um serviço web gratuito no workspace confirmado pela liderança, sem adotar nem alterar serviços existentes. Vercel e a API ainda dependem da conclusão da configuração e da validação após publicação. Os endereços de exemplo abaixo não representam URLs publicadas.
+O [plano Render](https://dashboard.render.com/blueprint/exs-dbs6n0u1egvs73d0448g/sync/exe-dbs6n361egvs73d04ap0) foi aprovado pela liderança e aplicado: criou somente o serviço web gratuito `smartmall-ai-demo-api-8mez`, sem adotar nem alterar serviços existentes. O [serviço da API](https://dashboard.render.com/web/srv-dbs6r4c9v7es73bs0d5g) teve o deploy verificado `dep-dbs6rnrbc2fs73ao1kv0`, commit `7c9ec22811e56649a01074575e823300542bcf5f`, concluído em `live`. A infraestrutura do Blueprint fica em aprovação manual; novos deploys do código da API usam a main após checks aprovados.
+
+O [projeto Vercel](https://vercel.com/contasjoaoneto-6902/smartmall-ai-demo) está conectado ao repositório `SmartMall-AI/fe-smartmall-ai`, com Node.js 24 e as variáveis públicas corretas. O primeiro deploy verificado `dpl_FiCuLPFfESZzz1wXzkNDsjtdyhpv` terminou em `READY`, publicado a partir do commit `4a72f9a12c9529458f1ee220745db0ca0f976b07`. A dificuldade inicial de vínculo GitHub foi resolvida; a publicação usa o repositório, não um upload manual de arquivos. A origem de produção está autorizada no CORS; previews não foram configurados como ambientes integrados independentes.
+
+Verificação HTTP externa: frontend 200, prontidão da API/banco 200, consulta operacional sem código 401 e validação do código 200 com CORS restrito à origem de produção e `Cache-Control: no-store`. O código privado foi entregue fora dos repositórios e não aparece neste documento.
+
+Os 12 cenários Playwright também passaram contra os endereços publicados, em 1,5 minuto: seis fluxos em desktop e celular. Cobrem persistência após recarga, revisão, tarefa/prazo/status, encerramento bloqueado, equipamentos, indicadores, recuperação de rede e validação/remoção do código. A falha de IA e a interrupção de rede são induzidas no navegador; a análise bem-sucedida continua simulada. Esses testes não representam sessões VAL-01 com usuários.
 
 ## Arquitetura
 
