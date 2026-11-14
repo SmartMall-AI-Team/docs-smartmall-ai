@@ -1,6 +1,6 @@
 # Contrato da API — MVP
 
-Contrato implementado pelo [backend no PR #3](https://github.com/SmartMall-AI/be-smartmall-ai/pull/3). O alinhamento das telas e a validação com usuários ainda precisam ser concluídos. O [OpenAPI exportado](https://github.com/SmartMall-AI/be-smartmall-ai/blob/main/openapi.json) contém os schemas completos gerados pelo FastAPI.
+Contrato implementado pelo [backend no PR #3](https://github.com/SmartMall-AI/be-smartmall-ai/pull/3). O [frontend foi verificado tecnicamente contra a API](entrega-frontend.md) em desktop e celular, sem mudança neste contrato. O aceite funcional da equipe e a validação com usuários ainda precisam ser concluídos. O [OpenAPI exportado](https://github.com/SmartMall-AI/be-smartmall-ai/blob/main/openapi.json) contém os schemas completos gerados pelo FastAPI.
 
 Base `/api/v1`. JSON em `snake_case`, identificadores UUID em string e datas ISO 8601 em UTC. A interface traduz enums para português. Listas retornam arrays sem paginação no MVP. As rotas ainda não têm autenticação: usar apenas ambiente local e dados fictícios.
 

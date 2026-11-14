@@ -16,7 +16,7 @@ O SmartMall AI busca reduzir a dispersão de informações no atendimento operac
 4. Criar e atualizar uma tarefa vinculada à ocorrência.
 5. Consultar indicadores calculados a partir do banco.
 
-Filtros, cadastro básico de equipamentos e histórico de status já estão implementados no backend; as respectivas interfaces ainda serão construídas. A validação com usuários precisa de tempo reservado durante o evento, pois é a prática sorteada prevista no planejamento.
+Cadastro, triagem manual/revisão de IA, tarefas, dashboard, equipamentos e histórico têm interface executável e verificação técnica integrada em desktop e celular. Os filtros de interface ainda são parciais e a edição de responsável/prazo de tarefa existente permanece futura; veja a [entrega do frontend](entrega-frontend.md). A validação com usuários precisa de tempo reservado durante o evento, pois é a prática sorteada prevista no planejamento.
 
 ## Fora da primeira entrega
 

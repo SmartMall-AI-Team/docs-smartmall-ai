@@ -20,7 +20,8 @@ A permissão base da organização é de leitura. A liderança mantém a adminis
 | Integração na main | Reservada a `@geraldojoao` |
 | Force push e exclusão da main | Bloqueados |
 | Backend | Check `check` aprovado e branch atualizada com a main |
-| Frontend e documentação | Revisão e regras de integração; sem checks funcionais inexistentes |
+| Frontend | Revisão e regras de integração; CI executa build e testes de navegador com API e banco isolados; check ainda não exigido pela proteção |
+| Documentação | Revisão e regras de integração; sem check funcional configurado |
 | Método de integração | Merge commit, preservando autoria e histórico |
 
 A proteção inclui administradores. Existe uma exceção explícita apenas para `@geraldojoao` na exigência de aprovação de PR. Isso permite integrar alterações próprias, já que o autor não pode aprovar seu próprio PR. Essa exceção não dispensa checks obrigatórios nem autoriza outros integrantes a integrar alterações.

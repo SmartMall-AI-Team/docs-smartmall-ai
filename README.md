@@ -14,6 +14,7 @@ Este repositório é o ponto de entrada para conhecer a proposta, acompanhar o d
 - [Arquitetura e responsabilidades](arquitetura.md)
 - [Contrato implementado da API](contrato-api.md)
 - [Entrega do backend e guia de integração](entrega-backend.md)
+- [Revisão do frontend e evidências de integração](entrega-frontend.md)
 - [Backlog por frente](backlog.md)
 - [Validação com usuários](validacao-usuarios.md)
 - [Roteiro de demonstração](demonstracao.md)
@@ -27,7 +28,7 @@ Este repositório é o ponto de entrada para conhecer a proposta, acompanhar o d
 | Repositório | Responsabilidade | Situação |
 | --- | --- | --- |
 | [be-smartmall-ai](https://github.com/SmartMall-AI/be-smartmall-ai) | API, banco e integração com IA | Fluxo do MVP integrado à main no [PR #3](https://github.com/SmartMall-AI/be-smartmall-ai/pull/3); análise real pendente de saldo da API |
-| [fe-smartmall-ai](https://github.com/SmartMall-AI/fe-smartmall-ai) | Interface, formulários e dashboard | Estrutura inicial; telas ainda não implementadas |
+| [fe-smartmall-ai](https://github.com/SmartMall-AI/fe-smartmall-ai) | Interface, formulários e dashboard | Interface integrada à main no [PR #3](https://github.com/SmartMall-AI/fe-smartmall-ai/pull/3), com correções de revisão e 10 testes integrados aprovados |
 | [docs-smartmall-ai](https://github.com/SmartMall-AI/docs-smartmall-ai) | Escopo, contrato, governança e evidências | Documentação do desenvolvimento |
 
 A organização é [SmartMall-AI](https://github.com/SmartMall-AI). Os três repositórios são públicos.
@@ -46,4 +47,4 @@ Registrar ocorrência → solicitar análise → revisar sugestões → atribuir
 
 ## Estado do planejamento
 
-O backend implementa ocorrências, triagem estruturada, revisão humana, tarefas, equipamentos, filtros, histórico e dashboard. Foram verificados 46 testes com PostgreSQL real. A chamada real da OpenAI foi recusada por saldo esgotado; testes controlados e modo explícito de simulação estão disponíveis. As telas, a integração entre frentes, a validação com usuários e a hospedagem continuam pendentes. Consulte a [entrega do backend](entrega-backend.md).
+O backend implementa ocorrências, triagem estruturada, revisão humana, tarefas, equipamentos, filtros, histórico e dashboard. Foram verificados 46 testes com PostgreSQL real e 10 testes de navegador do frontend com a API real em desktop e celular. A chamada real da OpenAI foi recusada por saldo esgotado; os testes de interface usam simulação explícita e falha controlada. Validação com usuários, aceite da equipe, filtros e edições adicionais, autenticação e hospedagem continuam pendentes. Consulte as entregas do [backend](entrega-backend.md) e do [frontend](entrega-frontend.md).
