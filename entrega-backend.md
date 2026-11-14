@@ -1,6 +1,6 @@
 # Entrega do backend e integração da equipe
 
-Responsável: [João Geraldo — @geraldojoao](https://github.com/geraldojoao). Implementação integrada à `main` no [PR #3](https://github.com/SmartMall-AI/be-smartmall-ai/pull/3), com autoria dos commits no seu perfil. Esta entrega inclui BE-01, BE-02, BE-03, BE-04, BE-05, AI-01 e a parte de API de HIST-01. A revisão entre frentes, as telas e o aceite integrado não estão concluídos.
+Responsável: [João Geraldo — @geraldojoao](https://github.com/geraldojoao). Implementação integrada à `main` no [PR #3](https://github.com/SmartMall-AI/be-smartmall-ai/pull/3), com autoria dos commits no seu perfil. Esta entrega inclui BE-01, BE-02, BE-03, BE-04, BE-05, AI-01 e a parte de API de HIST-01. Na entrega original, as telas e o aceite integrado estavam pendentes. Em 14/11/2026, a [revisão do frontend](entrega-frontend.md) acrescentou interface executável e 10 testes técnicos integrados; o aceite da equipe e a validação com usuários continuam pendentes.
 
 ## Evidências
 
@@ -12,7 +12,7 @@ Responsável: [João Geraldo — @geraldojoao](https://github.com/geraldojoao). 
 - Fluxo HTTP local verificado com servidor Uvicorn: Swagger e prontidão 200, cadastro 201, análise explicitamente simulada, revisão, criação/início/conclusão de tarefa, bloqueio de encerramento prematuro (409), resolução explícita, dez eventos de histórico e consulta do dashboard.
 - Seed fictício idempotente e OpenAPI exportado disponíveis no backend. Nenhuma credencial integra o repositório.
 
-## Primeira integração
+## Primeira integração — roteiro inicial
 
 O backend [README](https://github.com/SmartMall-AI/be-smartmall-ai/blob/main/README.md) traz a execução local. O contrato está em [contrato-api.md](contrato-api.md).
 
@@ -35,8 +35,8 @@ O backend [README](https://github.com/SmartMall-AI/be-smartmall-ai/blob/main/REA
 ## Pendências reais
 
 - Repor saldo da API e validar uma análise real; sem isso, usar simulação claramente indicada ou triagem manual.
-- Implementar e integrar frontend; revisar contrato entre as frentes (DOC-01).
-- Executar aceite integrado (INT-01), validação com usuários (VAL-01) e ensaio (DEMO-01).
+- Ampliar filtros do frontend e edição de responsável/prazo de tarefa; concluir o aceite funcional do contrato entre as frentes (DOC-01).
+- Concluir aceite da equipe após os testes técnicos integrados (INT-01), validação com usuários (VAL-01) e ensaio (DEMO-01).
 - Definir participantes, prazos e acesso à apresentação.
 - Login, autorização, proteção contra abuso e hospedagem pública continuam fora desta entrega. Papéis de responsáveis não aplicam permissões. Usar dados fictícios em ambiente local.
 - Compose não foi executado localmente porque Docker não estava disponível; PostgreSQL nativo e CI são as verificações executadas.

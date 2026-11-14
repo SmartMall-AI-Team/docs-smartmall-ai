@@ -2,6 +2,8 @@
 
 Usar dados fictícios claramente identificados. Este roteiro descreve a apresentação prevista e deve ser ajustado ao que estiver implementado no dia.
 
+O fluxo já dispõe de interface executável e 10 testes técnicos integrados em desktop e celular; veja [evidências e limites](entrega-frontend.md). O ensaio da apresentação e a validação com usuários ainda precisam ocorrer. Prepare o backend com seed fictício e, se necessário, `AI_SIMULATION=true`; não apresente a simulação como chamada real ao provedor.
+
 ## Problema e proposta
 
 Explicar como registros dispersos dificultam o entendimento, o encaminhamento e o acompanhamento de ocorrências operacionais de um shopping. Apresentar o SmartMall AI como um fluxo único, com IA para apoiar a triagem e revisão humana para confirmar as decisões.

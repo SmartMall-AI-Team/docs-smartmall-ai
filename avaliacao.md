@@ -17,7 +17,7 @@ O SmartMall AI busca centralizar ocorrências operacionais de um shopping. A IA 
 | Estrutura dos repositórios | Três repositórios separados e públicos |
 | Backend do MVP | Ocorrências, tarefas, equipamentos, filtros, histórico e dashboard integrados à main no [PR #3](https://github.com/SmartMall-AI/be-smartmall-ai/pull/3) |
 | Verificação do backend | 46 testes passaram com PostgreSQL real, além de lint, formatação e verificação da migração |
-| Frontend | Estrutura inicial; telas ainda não implementadas |
+| Frontend | Interface executável no [PR #3](https://github.com/SmartMall-AI/fe-smartmall-ai/pull/3); build e 10 cenários integrados de navegador aprovados em desktop e celular |
 | IA | Integração e testes controlados implementados; chamada real recusada por saldo esgotado (`credit_balance_exhausted`); simulação explícita disponível |
 | Validação com usuários | Roteiro preparado; sessões e resultados ainda não coletados |
 | Hospedagem pública | Ambientes ainda não provisionados |
@@ -31,6 +31,8 @@ O SmartMall AI busca centralizar ocorrências operacionais de um shopping. A IA 
 - [Checks atuais do PR #3](https://github.com/SmartMall-AI/be-smartmall-ai/pull/3/checks)
 - [Entrega do backend e limites da verificação](entrega-backend.md)
 - [Commit do fluxo completo do backend](https://github.com/SmartMall-AI/be-smartmall-ai/commit/f1500db)
+- [Revisão, correções e limites do frontend](entrega-frontend.md)
+- [Checks do frontend](https://github.com/SmartMall-AI/fe-smartmall-ai/actions/runs/43600532632)
 
 A verificação HTTP local também confirmou criação com status 201 e consulta do registro após reiniciar a API. A URL local do Swagger é uma ferramenta de desenvolvimento, não um ambiente público para a banca.
 

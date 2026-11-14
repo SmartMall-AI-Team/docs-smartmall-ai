@@ -1,6 +1,6 @@
 # Backlog do hackrun
 
-Este arquivo mantém as entregas da equipe. **BE-01 a BE-05, AI-01 e a parte de API de HIST-01 estão implementados** no [PR #3 do backend](https://github.com/SmartMall-AI/be-smartmall-ai/pull/3), com 46 testes locais aprovados. A análise real da OpenAI depende de saldo na conta; o restante do produto, a revisão entre frentes e o aceite integrado continuam pendentes. Veja a [entrega do backend](entrega-backend.md). O [Trello](https://trello.com/b/TMJ0EfTl) acompanha o andamento por cores. Não foram criadas issues para duplicar este backlog nem um quadro GitHub Projects.
+Este arquivo mantém as entregas da equipe. **BE-01 a BE-05 e AI-01 estão implementados** no [PR #3 do backend](https://github.com/SmartMall-AI/be-smartmall-ai/pull/3), com 46 testes aprovados. **FE-01 a FE-05 e HIST-01 têm interface e fluxo técnico integrado verificados** no [PR #3 do frontend](https://github.com/SmartMall-AI/fe-smartmall-ai/pull/3), com 10 cenários de navegador aprovados. A análise real da OpenAI, o aceite da equipe e a validação com usuários continuam pendentes. Veja as entregas do [backend](entrega-backend.md) e do [frontend](entrega-frontend.md). O [Trello](https://trello.com/b/TMJ0EfTl) acompanha o andamento por cores. Não foram criadas issues para duplicar este backlog nem um quadro GitHub Projects.
 
 O Trello mantém listas por etapa e uma única cor de andamento por cartão. A legenda final explica amarelo, laranja, roxo, verde, vermelho e azul; não adicionar prefixos de estado aos títulos.
 
@@ -24,8 +24,21 @@ O Trello mantém listas por etapa e uma única cor de andamento por cartão. A l
 | FE-06 | P1 | Frontend | Filtros e equipamentos | Interface consome os filtros e consulta equipamentos | BE-05, FE-02 |
 | HIST-01 | P1 | Backend e frontend | Histórico de status | Alterações exibem sequência e datas consistentes | Fluxo principal |
 
+## Situação após a revisão de 14/11/2026
+
+| Frente | Evidência e trabalho futuro |
+| --- | --- |
+| DOC-01 | Contrato exercitado pelo frontend e backend sem mudança de campos ou rotas; aceite funcional da equipe ainda necessário |
+| FE-01 a FE-05 | Aplicação executável; fluxo de cadastro, triagem, tarefa e dashboard verificado em desktop e celular |
+| FE-06 | Parcial: busca/filtros rápidos e equipamentos; faltam filtros completos de categoria, equipamento e local |
+| HIST-01 | Eventos persistidos exibidos no detalhe; sem autoria autenticada |
+| INT-01 | 10 testes técnicos aprovados, incluindo IA simulada e falha controlada; aceite final da equipe pendente |
+| VAL-01 e DEMO-01 | Sessões com usuários e ensaio ainda pendentes; testes automatizados não os substituem |
+
+A edição de responsável/prazo de tarefa existente permanece futura; hoje esses campos são definidos na criação e a interface permite atualizar o status. Autenticação e hospedagem não foram entregues.
+
 ## Ordem de integração
 
-Integrar o cadastro persistido primeiro. O frontend pode usar dados fictícios para desenvolver telas enquanto a API é construída, desde que estejam identificados e sejam substituídos na integração. Não deixar a primeira integração para o fim do evento.
+O cadastro persistido e o fluxo principal já foram exercitados com a API real local e dados fictícios. Manter essa integração durante as próximas entregas; usar os testes de navegador para detectar regressões e reservar tempo para sessões reais de validação.
 
 A equipe tem quatro pessoas. João Geraldo lidera o projeto e assume backend, dados e integração de IA. A proposta para as outras três frentes é Frontend A, Frontend B e QA/documentação. A distribuição nominal e os prazos ainda serão definidos pela equipe.
