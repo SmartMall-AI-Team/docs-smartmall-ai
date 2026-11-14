@@ -10,7 +10,9 @@ O projeto exclusivo [smartmall-ai-demo no Supabase](https://supabase.com/dashboa
 
 O papel da API não é superuser, não cria bancos/roles e recebeu somente uso/criação no schema público para possuir as tabelas da aplicação. A senha foi gerada no banco, transferida de forma privada para a sessão de preparação e o armazenamento temporário foi removido; não foi inserida em Git ou no texto das migrações.
 
-O [plano Render](https://dashboard.render.com/blueprint/exs-dbs6n0u1egvs73d0448g/sync/exe-dbs6n361egvs73d04ap0) foi aprovado pela liderança e aplicado: criou somente o serviço web gratuito `smartmall-ai-demo-api-8mez`, sem adotar nem alterar serviços existentes. O [serviço da API](https://dashboard.render.com/web/srv-dbs6r4c9v7es73bs0d5g) teve o deploy verificado `dep-dbs6rnrbc2fs73ao1kv0`, commit `7c9ec22811e56649a01074575e823300542bcf5f`, concluído em `live`. A infraestrutura do Blueprint fica em aprovação manual; novos deploys do código da API usam a main após checks aprovados.
+O [plano Render](https://dashboard.render.com/blueprint/exs-dbs6n0u1egvs73d0448g/sync/exe-dbs6n361egvs73d04ap0) foi aprovado pela liderança e aplicado: criou somente o serviço web gratuito `smartmall-ai-demo-api-8mez`, sem adotar nem alterar serviços existentes. O [serviço da API](https://dashboard.render.com/web/srv-dbs6r4c9v7es73bs0d5g) teve o deploy verificado `dep-dbs6rnrbc2fs73ao1kv0`, commit `7c9ec22811e56649a01074575e823300542bcf5f`, concluído em `live`. A infraestrutura do Blueprint fica em aprovação manual.
+
+**Decisão posterior da liderança em 14/11/2026:** manter o backend com deploy manual por enquanto. A inspeção identificou que o aplicativo Render estava instalado na CHSRC, mas não na SmartMall-AI; a instalação nessa organização foi adiada pelo usuário. `autoDeployTrigger` foi alterado para `off` no serviço e no Blueprint. Isso não muda o deploy automático do frontend Vercel, que foi verificado após o merge do README na main.
 
 O [projeto Vercel](https://vercel.com/contasjoaoneto-6902/smartmall-ai-demo) está conectado ao repositório `SmartMall-AI/fe-smartmall-ai`, com Node.js 24 e as variáveis públicas corretas. O primeiro deploy verificado `dpl_FiCuLPFfESZzz1wXzkNDsjtdyhpv` terminou em `READY`, publicado a partir do commit `4a72f9a12c9529458f1ee220745db0ca0f976b07`. A dificuldade inicial de vínculo GitHub foi resolvida; a publicação usa o repositório, não um upload manual de arquivos. A origem de produção está autorizada no CORS; previews não foram configurados como ambientes integrados independentes.
 
@@ -48,7 +50,7 @@ Usar o `render.yaml` de `SmartMall-AI/be-smartmall-ai`, branch `main`, com plano
 | DATABASE_URL | URI privada do banco exclusivo, com TLS |
 | CORS_ORIGINS | Origem HTTPS exata do frontend, sem caminho |
 
-`app.deploy` serializa migrações e seed com bloqueio PostgreSQL e só depois inicia Uvicorn na porta `PORT`. O seed é fictício e idempotente; reiniciar preserva alterações já feitas. Falha de migração impede iniciar o servidor. O Blueprint solicita deploy automático apenas após os checks da branch passarem.
+`app.deploy` serializa migrações e seed com bloqueio PostgreSQL e só depois inicia Uvicorn na porta `PORT`. O seed é fictício e idempotente; reiniciar preserva alterações já feitas. Falha de migração impede iniciar o servidor. Antes de um deploy manual, conferir o commit da main e o check obrigatório `check`; depois acionar **Manual Deploy → Deploy latest commit** no serviço e aguardar `live` e prontidão 200. Não usar deploy de commit específico para substituir a main sem alinhamento.
 
 O Render gratuito pode suspender após 15 minutos sem tráfego e levar cerca de um minuto para retomar. Verificar o sistema antes da apresentação. O recurso de pre-deploy pago não é necessário para o comando acima.
 
