@@ -1,5 +1,7 @@
 # SmartMall AI
 
+**Para os avaliadores: [todos os links do projeto](links-avaliacao.md)** — site na Vercel, API, Trello, Miro, código-fonte e evidências.
+
 > **Cópia independente — SmartMall-AI-Team.** Administração: [@Setezin7](https://github.com/Setezin7). Código e histórico preservados da organização anterior. Links de PRs, execuções antigas e serviços publicados registram evidências da origem; esses recursos não foram migrados nem recriados por esta cópia. Consulte o [registro da cópia](https://github.com/SmartMall-AI-Team/docs-smartmall-ai/blob/main/copia-team.md).
 
 Gestão de ocorrências operacionais de shopping: do relato ao atendimento, com triagem assistida e revisão humana.
@@ -33,6 +35,7 @@ Captura do ambiente publicado em 14/11/2026; os indicadores mudam conforme os re
 
 | Quero consultar… | Documento |
 | --- | --- |
+| Encontrar os links do projeto | [Links para avaliação](links-avaliacao.md) |
 | Avaliar o projeto | [Guia para a banca](avaliacao.md) · [Demonstração passo a passo](demonstracao.md) |
 | Entender a proposta | [Escopo e critérios de aceite](escopo.md) · [Arquitetura](arquitetura.md) |
 | Conhecer rotas e regras | [Contrato da API](contrato-api.md) |
