@@ -1,50 +1,52 @@
-# Roteiro e evidências para a banca
+# SmartMall AI — guia para a banca
 
-Este roteiro organiza a consulta ao projeto. Não representa critérios oficiais do evento nem comprova funcionalidades apenas por estarem planejadas.
+Este guia facilita a avaliação da entrega; não representa critérios oficiais do evento.
 
-## 1. Problema e proposta
+**[Abrir demonstração](https://smartmall-ai-demo.vercel.app)** · **[Documentação](README.md)** · **[Swagger público](https://smartmall-ai-demo-api-8mez.onrender.com/docs)**
 
-O SmartMall AI busca centralizar ocorrências operacionais de um shopping. A IA sugere uma classificação e um encaminhamento; o gestor revisa as sugestões. O atendimento deve continuar manualmente se a IA estiver indisponível.
+## 1. Entrar e conhecer a proposta
 
-- [Escopo e critérios de aceite](escopo.md)
-- [Arquitetura](arquitetura.md)
-- [Fluxograma no Miro](https://miro.com/app/board/uXjVEOPHRG4=/?share_link_id=465697087214)
+Use **`marina` / `marina123`**, conta fictícia de administração. Não há código de acesso adicional nem cadastro prévio. Se a API estiver despertando, aguarde cerca de um minuto até aparecer **Conectado à API**.
 
-## 2. Estado da entrega
+O SmartMall AI centraliza relatos operacionais de um shopping e acompanha triagem, revisão humana e atendimento. A proposta é diminuir a dispersão de informações; não há medição de redução de tempo nem validação com usuários reais.
 
-| Frente | Situação verificável |
-| --- | --- |
-| Estrutura dos repositórios | Três repositórios separados e públicos |
-| Backend do MVP | Ocorrências, tarefas, equipamentos, filtros, histórico e dashboard integrados à main no [PR #3](https://github.com/SmartMall-AI/be-smartmall-ai/pull/3) |
-| Verificação do backend | 54 testes passaram com PostgreSQL real, incluindo controle de acesso, RLS e inicialização do deploy; lint, formatação e migrações verificados |
-| Frontend | Interface executável, build e 12 cenários integrados de navegador aprovados em desktop e celular, incluindo código privado validado no servidor |
-| IA | Integração e testes controlados implementados; chamada real recusada por saldo esgotado (`credit_balance_exhausted`); simulação explícita disponível |
-| Validação com usuários | Roteiro preparado; sessões e resultados ainda não coletados |
-| Hospedagem | [Demonstração Vercel publicada](https://smartmall-ai-demo.vercel.app), API Render e banco Supabase; 12 testes de navegador também aprovados contra a nuvem. Código privado compartilhado e IA simulada. [Evidências](deploy.md) |
+## 2. Testar o fluxo
 
-## 3. Evidências técnicas
+| Passo | Ação | Resultado a observar |
+| --- | --- | --- |
+| Registrar | Em **Nova ocorrência**, cadastre um relato fictício com título, descrição e local | O registro continua disponível após recarregar |
+| Analisar | Selecione **Solicitar análise** | Sugestões com indicação **Resultado de simulação** |
+| Revisar | Use **Usar sugestões no formulário**, ajuste e **Confirmar revisão** | A decisão humana é salva sem aplicar sugestões automaticamente |
+| Encaminhar | Em **Atribuir nova tarefa**, informe atividade, responsável fictício e prazo | Tarefa vinculada à ocorrência |
+| Acompanhar | Inicie e conclua a tarefa; depois resolva a ocorrência | Histórico e dashboard atualizados; tarefas pendentes impedem encerrar |
 
-- [Commit da base FastAPI e PostgreSQL](https://github.com/SmartMall-AI/be-smartmall-ai/commit/e18abcfd6095164b0126af7e658d565d817d90fd)
-- [Commit de cadastro, listagem e detalhe](https://github.com/SmartMall-AI/be-smartmall-ai/commit/21b4ef1f6bd7c2947f60e4cb488d2aee8ad8fab2)
-- [Execução aprovada dos checks do PR](https://github.com/SmartMall-AI/be-smartmall-ai/actions/runs/43513676632)
-- [README de execução do backend](https://github.com/SmartMall-AI/be-smartmall-ai/blob/main/README.md)
-- [Checks atuais do PR #3](https://github.com/SmartMall-AI/be-smartmall-ai/pull/3/checks)
-- [Entrega do backend e limites da verificação](entrega-backend.md)
-- [Commit do fluxo completo do backend](https://github.com/SmartMall-AI/be-smartmall-ai/commit/f1500db)
-- [Revisão, correções e limites do frontend](entrega-frontend.md)
-- [Checks do frontend](https://github.com/SmartMall-AI/fe-smartmall-ai/actions/runs/43600532632)
+Veja os passos completos no [roteiro de demonstração](demonstracao.md). Use apenas dados fictícios: todos compartilham o mesmo ambiente.
 
-A verificação HTTP local também confirmou criação com status 201 e consulta do registro após reiniciar a API. A URL local do Swagger é uma ferramenta de desenvolvimento, não um ambiente público para a banca.
+Outros perfis disponíveis na tela: `operacao` / `operacao123`, `joao` / `joao123`, `ana` / `ana123` e `carlos` / `carlos123`. São perfis de navegação demonstrativos, sem autorização real por pessoa.
 
-## 4. Organização e participação
+## 3. Conferir implementação e evidências
 
-- [Equipe e frentes](equipe.md)
-- [Liderança e permissões](governanca.md)
-- [Fluxo de contribuição](CONTRIBUTING.md)
-- [Trello](https://trello.com/b/TMJ0EfTl): quadro privado com três etapas, checklists e legenda de cores; acesso depende de autorização da liderança.
+| Frente | Entrega verificável | Onde conferir |
+| --- | --- | --- |
+| Backend | Ocorrências, tarefas, responsáveis, equipamentos, filtros, histórico e dashboard | [Código](https://github.com/SmartMall-AI/be-smartmall-ai) · [Contrato](contrato-api.md) |
+| Frontend | Formulários, triagem manual e assistida, tarefas, equipamentos e indicadores | [Código](https://github.com/SmartMall-AI/fe-smartmall-ai) · [Revisão técnica](entrega-frontend.md) |
+| Testes | 55 testes backend; 12 cenários desktop/celular na entrega protegida; login e recarga sem código verificados depois nos dois formatos | [Evidências datadas](deploy.md) · [Actions backend](https://github.com/SmartMall-AI/be-smartmall-ai/actions) · [Actions frontend](https://github.com/SmartMall-AI/fe-smartmall-ai/actions) |
+| Hospedagem | Vercel → API Render → PostgreSQL Supabase | [Arquitetura](arquitetura.md) · [Prontidão da API/banco](https://smartmall-ai-demo-api-8mez.onrender.com/health/ready) |
+| Evolução | Alterações integradas por PR, com autoria e checks preservados | [PRs backend](https://github.com/SmartMall-AI/be-smartmall-ai/pulls?q=is%3Apr+is%3Amerged) · [PRs frontend](https://github.com/SmartMall-AI/fe-smartmall-ai/pulls?q=is%3Apr+is%3Amerged) |
 
-Pull requests e commits preservam a autoria de cada integrante. O quadro é atualizado conforme o trabalho real, sem apresentar tarefas planejadas como concluídas.
+Os testes usam PostgreSQL real e falhas de IA/rede controladas. Não representam sessões com usuários. O [PR backend #8](https://github.com/SmartMall-AI/be-smartmall-ai/pull/8) registra a remoção do código compartilhado e o teste de acesso sem código.
 
-## 5. Demonstração e limites
+## 4. Distinguir entrega e próximos passos
 
-Use o [roteiro de demonstração](demonstracao.md) e o [plano de validação](validacao-usuarios.md). Ajuste a apresentação ao que estiver funcionando. Resultados de uso, redução de tempo e aprovação de usuários só devem ser apresentados quando houver evidências coletadas.
+- **Funcionando:** fluxo operacional persistido, revisão humana, triagem manual, IA simulada e demonstração pública.
+- **Integração preparada:** OpenAI com saída estruturada e testes controlados. A tentativa real retornou saldo esgotado; nenhuma análise real foi validada.
+- **Pendente:** autenticação e permissões reais, filtros completos, edição de responsável/prazo, validação com usuários e mensuração de resultados.
+- **Rádio:** anotação digitada local; sem captura de áudio ou transcrição automática.
+
+Consulte [escopo](escopo.md), [backlog](backlog.md) e [plano de validação](validacao-usuarios.md) para critérios e trabalho futuro.
+
+## 5. Equipe e organização
+
+[João Geraldo — @geraldojoao](https://github.com/geraldojoao) lidera o projeto e responde pelo backend. [Equipe e frentes](equipe.md) · [Governança](governanca.md) · [Contribuição](CONTRIBUTING.md).
+
+O [Trello](https://trello.com/b/TMJ0EfTl) é privado; o acesso não é necessário para consultar a demonstração e as evidências públicas deste guia.

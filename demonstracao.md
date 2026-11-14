@@ -1,8 +1,8 @@
 # Roteiro de demonstração
 
-Usar dados fictícios claramente identificados. Este roteiro descreve a apresentação prevista e deve ser ajustado ao que estiver implementado no dia.
+Abra a [demonstração publicada](https://smartmall-ai-demo.vercel.app) e entre com **`marina` / `marina123`**, conta fictícia de administração. Não há código de acesso adicional. Aguarde **Conectado à API**; a API gratuita pode levar cerca de um minuto para despertar. Use somente dados fictícios.
 
-O fluxo já dispõe de interface executável e 10 testes técnicos integrados em desktop e celular; veja [evidências e limites](entrega-frontend.md). O ensaio da apresentação e a validação com usuários ainda precisam ocorrer. Prepare o backend com seed fictício e, se necessário, `AI_SIMULATION=true`; não apresente a simulação como chamada real ao provedor.
+O fluxo está publicado e foi verificado em desktop e celular; veja [deploy e evidências](deploy.md). A IA da demonstração está sempre em simulação e a indicação permanece visível. O ensaio da apresentação e a validação com usuários ainda precisam ocorrer.
 
 ## Problema e proposta
 
@@ -10,14 +10,15 @@ Explicar como registros dispersos dificultam o entendimento, o encaminhamento e 
 
 ## Demonstração do fluxo
 
-1. Registrar um ar-condicionado sem refrigeração na praça de alimentação.
-2. Encontrar a ocorrência na lista e abrir o detalhe.
-3. Solicitar a análise e explicar categoria, prioridade e equipe sugeridas.
-4. Revisar a sugestão e salvar os ajustes.
-5. Criar uma tarefa vinculada, atribuir responsável fictício e definir prazo.
-6. Atualizar o atendimento e mostrar as contagens do dashboard.
+1. Em **Nova ocorrência**, registrar um relato fictício de ar-condicionado sem refrigeração, com descrição e local. Enviar e abrir o detalhe pela lista.
+2. Recarregar a página e mostrar que o registro continua salvo na API.
+3. Selecionar **Solicitar análise** e explicar categoria, prioridade e equipe sugeridas. Mostrar **Resultado de simulação**.
+4. Selecionar **Usar sugestões no formulário**, revisar os valores e **Confirmar revisão**. Explicar que a sugestão não substitui a decisão humana.
+5. Em **Atribuir nova tarefa**, informar atividade, responsável fictício e prazo. Criar a tarefa vinculada.
+6. Iniciar e concluir a tarefa. Resolver a ocorrência explicitamente; tarefas pendentes impedem esse encerramento.
+7. Mostrar o histórico e o dashboard com os dados persistidos.
 
-Se a IA estiver em simulação, dizer isso e manter a indicação visível. Se o provedor estiver indisponível, mostrar que o registro permanece salvo e que a triagem manual pode continuar.
+A demonstração não chama o provedor real. Os testes técnicos também cobrem falha controlada da IA, com registro preservado e classificação manual disponível; a banca pode consultar essas evidências sem provocar uma falha no ambiente publicado.
 
 ## Evidências a preparar
 

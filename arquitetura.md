@@ -4,10 +4,11 @@ A separação em três repositórios organiza o trabalho da equipe. O backend co
 
 ```mermaid
 flowchart LR
-    U[Usuário] --> F[Frontend React e TypeScript]
-    F -->|HTTPS e JSON| B[API FastAPI]
-    B --> DB[(PostgreSQL)]
-    B --> AI[Serviço de IA generativa]
+    U[Usuário] --> F[React e TypeScript na Vercel]
+    F -->|HTTPS e JSON| B[API FastAPI no Render]
+    B --> DB[(PostgreSQL no Supabase)]
+    B --> AI[Triagem simulada na demonstração]
+    B -. integração preparada .-> O[OpenAI: chamada real pendente de validação]
     D[Documentação compartilhada] -. contrato e requisitos .-> F
     D -. contrato e requisitos .-> B
 ```
@@ -38,6 +39,6 @@ Salvar a ocorrência antes de chamar a IA. Uma falha no provedor não pode apaga
 
 Os indicadores derivam do banco. Iniciar tarefa põe ocorrência aberta em andamento. Concluir tarefa não resolve automaticamente a ocorrência; o operador resolve explicitamente após todas as tarefas concluídas. Histórico e alteração são gravados na mesma transação. Escritas de tarefa e encerramento bloqueiam a ocorrência para serializar decisões. O [contrato](contrato-api.md) detalha as regras.
 
-## Hospedagem prevista
+## Hospedagem publicada
 
-Frontend na Vercel, API no Render e PostgreSQL no Supabase são opções propostas no documento original. Os ambientes ainda não foram provisionados e os endereços ainda não existem. A configuração final será registrada depois da publicação.
+O [frontend está na Vercel](https://smartmall-ai-demo.vercel.app), a [API no Render](https://smartmall-ai-demo-api-8mez.onrender.com/docs) e o PostgreSQL no Supabase. O frontend não recebe a conexão do banco nem chaves de IA. A demonstração dispensa código de acesso adicional e usa dados fictícios com IA simulada. O [guia de deploy](deploy.md) registra configuração, verificações e limites do plano gratuito.

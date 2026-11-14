@@ -1,51 +1,57 @@
 # SmartMall AI
 
-Centralização de ocorrências operacionais de um shopping, com IA para apoiar a triagem e revisão humana para confirmar as decisões.
+Gestão de ocorrências operacionais de shopping: do relato ao atendimento, com triagem assistida e revisão humana.
 
-Este repositório é o ponto de entrada para conhecer a proposta, acompanhar o desenvolvimento e consultar as evidências do hackathon. A redução do tempo de atendimento é uma hipótese a validar.
+**[Abrir demonstração](https://smartmall-ai-demo.vercel.app)** · **[Guia para a banca](avaliacao.md)** · **[API interativa](https://smartmall-ai-demo-api-8mez.onrender.com/docs)**
 
-**Liderança do projeto e backend:** [João Geraldo — @geraldojoao](https://github.com/geraldojoao). A equipe tem quatro pessoas; as demais funções ainda serão distribuídas.
+## Experimente agora
 
-**Para a banca:** comece pelo [roteiro de avaliação](avaliacao.md). Ele distingue planejamento, implementação em revisão e evidências já verificadas.
+1. Abra a [demonstração online](https://smartmall-ai-demo.vercel.app).
+2. Entre com **usuário `marina` e senha `marina123`** (administração fictícia). Não há código de acesso adicional.
+3. Cadastre uma ocorrência fictícia, solicite análise, revise as sugestões e acompanhe tarefas e indicadores.
 
-## Índice
+O serviço gratuito da API pode levar cerca de um minuto para despertar após inatividade. Aguarde **Conectado à API**. Não precisa instalar nada nem criar conta.
 
-- [Escopo e critérios de aceite](escopo.md)
-- [Arquitetura e responsabilidades](arquitetura.md)
-- [Contrato implementado da API](contrato-api.md)
-- [Entrega do backend e guia de integração](entrega-backend.md)
-- [Revisão do frontend e evidências de integração](entrega-frontend.md)
-- [Deploy de demonstração e controle de acesso](deploy.md)
-- [Backlog por frente](backlog.md)
-- [Validação com usuários](validacao-usuarios.md)
-- [Roteiro de demonstração](demonstracao.md)
-- [Guia de contribuição](CONTRIBUTING.md)
-- [Liderança, permissões e revisão](governanca.md)
-- [Equipe e responsabilidades](equipe.md)
-- [Roteiro e evidências para a banca](avaliacao.md)
+![Dashboard da demonstração SmartMall AI](assets/dashboard-demo.png)
 
-## Divisão dos repositórios
+Captura do ambiente publicado em 14/11/2026; os indicadores mudam conforme os registros fictícios.
 
-| Repositório | Responsabilidade | Situação |
+> A demonstração usa dados fictícios compartilhados e **IA simulada**, identificada na tela. Os perfis não implementam autenticação ou permissões reais. Use somente relatos fictícios.
+
+## O que está disponível
+
+| Etapa | Funcionalidades |
+| --- | --- |
+| Registro | Cadastro, lista, detalhe, busca e filtros rápidos de ocorrências |
+| Triagem | Sugestões simuladas, classificação manual e revisão humana explícita |
+| Atendimento | Tarefas com responsável, prazo e status; encerramento da ocorrência |
+| Acompanhamento | Histórico persistido, equipamentos e dashboard com dados da API |
+
+## Documentação
+
+| Quero consultar… | Documento |
+| --- | --- |
+| Avaliar o projeto | [Guia para a banca](avaliacao.md) · [Demonstração passo a passo](demonstracao.md) |
+| Entender a proposta | [Escopo e critérios de aceite](escopo.md) · [Arquitetura](arquitetura.md) |
+| Conhecer rotas e regras | [Contrato da API](contrato-api.md) |
+| Conferir a entrega | [Deploy e evidências](deploy.md) · [Backend](entrega-backend.md) · [Frontend](entrega-frontend.md) |
+| Ver próximos passos | [Backlog](backlog.md) · [Validação com usuários](validacao-usuarios.md) |
+| Conhecer a equipe | [Equipe](equipe.md) · [Contribuição](CONTRIBUTING.md) · [Governança](governanca.md) |
+
+## Código e serviços
+
+| Repositório público | Conteúdo | Ambiente |
 | --- | --- | --- |
-| [be-smartmall-ai](https://github.com/SmartMall-AI/be-smartmall-ai) | API, banco e integração com IA | Fluxo do MVP integrado à main no [PR #3](https://github.com/SmartMall-AI/be-smartmall-ai/pull/3); análise real pendente de saldo da API |
-| [fe-smartmall-ai](https://github.com/SmartMall-AI/fe-smartmall-ai) | Interface, formulários e dashboard | Interface integrada à main no [PR #3](https://github.com/SmartMall-AI/fe-smartmall-ai/pull/3), com correções de revisão e 10 testes integrados aprovados |
-| [docs-smartmall-ai](https://github.com/SmartMall-AI/docs-smartmall-ai) | Escopo, contrato, governança e evidências | Documentação do desenvolvimento |
+| [fe-smartmall-ai](https://github.com/SmartMall-AI/fe-smartmall-ai) | React, TypeScript e interface | [Site na Vercel](https://smartmall-ai-demo.vercel.app) |
+| [be-smartmall-ai](https://github.com/SmartMall-AI/be-smartmall-ai) | FastAPI, SQLAlchemy e migrações | [Swagger no Render](https://smartmall-ai-demo-api-8mez.onrender.com/docs) |
+| [docs-smartmall-ai](https://github.com/SmartMall-AI/docs-smartmall-ai) | Requisitos, documentação e evidências | Você está aqui |
 
-A organização é [SmartMall-AI](https://github.com/SmartMall-AI). Os três repositórios são públicos.
+Verificação funcional de **14/11/2026**: 55 testes backend aprovados; 12 cenários de navegador aprovados na entrega do ambiente protegido; após retirar o código de acesso, login e recarga novamente aprovados em desktop e celular, com consultas públicas à API. O [guia de deploy](deploy.md) distingue cada verificação. [Actions backend](https://github.com/SmartMall-AI/be-smartmall-ai/actions) · [Actions frontend](https://github.com/SmartMall-AI/fe-smartmall-ai/actions).
 
-## Acompanhamento
+## Limites e organização
 
-- [Fluxograma no Miro](https://miro.com/app/board/uXjVEOPHRG4=/?share_link_id=465697087214): fluxo planejado e responsabilidades dos módulos.
-- [Trello](https://trello.com/b/TMJ0EfTl): etapas, responsáveis, checklists e evidências. O quadro é privado; sua consulta exige acesso concedido pela liderança.
-- [Pull request do backend](https://github.com/SmartMall-AI/be-smartmall-ai/pull/3): fluxo do MVP e verificações automáticas públicas.
+A integração OpenAI está implementada e testada com respostas controladas; a chamada real depende de saldo e validação. Autenticação individual, autorização por perfil, filtros adicionais, edição de responsável/prazo e sessões com usuários continuam pendentes. O rádio aceita anotações digitadas, sem captura de áudio ou transcrição. Redução de tempo de atendimento é uma hipótese ainda sem medição.
 
-As etapas de desenvolvimento são: cadastro e consulta; triagem e atendimento; validação e apresentação. O fluxo de contribuição é **branch → pull request → revisão da liderança → integração à main**.
+**Liderança e backend:** [João Geraldo — @geraldojoao](https://github.com/geraldojoao). A [equipe](equipe.md) tem quatro integrantes; as demais frentes ainda estão em definição.
 
-## Fluxo principal
-
-Registrar ocorrência → solicitar análise → revisar sugestões → atribuir tarefa → atualizar atendimento → consultar dashboard.
-
-## Estado do planejamento
-
-O backend implementa ocorrências, triagem estruturada, revisão humana, tarefas, equipamentos, filtros, histórico e dashboard. Foram verificados 54 testes com PostgreSQL real e 12 testes de navegador em desktop e celular, também aprovados contra a [demonstração publicada](https://smartmall-ai-demo.vercel.app). O ambiente exige código privado e usa IA simulada; a chamada real da OpenAI continua pendente de saldo e validação. Validação com usuários, aceite da equipe, filtros e edições adicionais e autenticação individual continuam pendentes. Consulte o [deploy e suas evidências](deploy.md) e as entregas do [backend](entrega-backend.md) e do [frontend](entrega-frontend.md).
+O [Trello](https://trello.com/b/TMJ0EfTl) é privado e complementar: os materiais públicos acima permitem consultar a entrega. O [Miro](https://miro.com/app/board/uXjVEOPHRG4=/?share_link_id=465697087214) registra o planejamento inicial. A [organização SmartMall-AI](https://github.com/SmartMall-AI) reúne os links principais.

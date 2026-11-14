@@ -1,5 +1,7 @@
 # Entrega do backend e integração da equipe
 
+**Estado atual:** [Swagger público](https://smartmall-ai-demo-api-8mez.onrender.com/docs), demonstração sem código de acesso e 55 testes backend aprovados. Veja [deploy e evidências posteriores](deploy.md). O relato abaixo preserva os resultados da entrega inicial.
+
 Responsável: [João Geraldo — @geraldojoao](https://github.com/geraldojoao). Implementação integrada à `main` no [PR #3](https://github.com/SmartMall-AI/be-smartmall-ai/pull/3), com autoria dos commits no seu perfil. Esta entrega inclui BE-01, BE-02, BE-03, BE-04, BE-05, AI-01 e a parte de API de HIST-01. Na entrega original, as telas e o aceite integrado estavam pendentes. Em 14/11/2026, a [revisão do frontend](entrega-frontend.md) acrescentou interface executável e 10 testes técnicos integrados; o aceite da equipe e a validação com usuários continuam pendentes.
 
 ## Evidências
